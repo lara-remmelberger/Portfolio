@@ -1,7 +1,7 @@
 # portfolio
 A digital portfolio showcasing my work in 2D animation, short films, game development, digital art, and interaction design.
 
-## Animation, Film & Interaction Design: YouTube Videos imbedded
+## Animation, Film & Interaction Design
 <table>
   <tr>
     <td align="center">
