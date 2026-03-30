@@ -151,23 +151,35 @@
 </div>
 
     <!-- Section: Comic (Compact Box) -->
-    <div id="comic" class="section">
-        <h2>Visual Storytelling & Comic Art</h2>
-        <div class="project-panel">
-            <div class="project-visual comic-visual-fixed">
-                <img src="comic/01_cover.jpg" alt="Comic Cover" onclick="openLightbox('comic', 0)">
-            </div>
-            <div class="project-info">
-                <h3>The World You Put Me In</h3>
-                <p>A 15-page black and white comic about escapism and projection. A young man falls in love with a fantasy version of a stranger, only to realize he cares more for his own creation than the actual person.</p>
-                <button class="btn-read" onclick="openLightbox('comic', 0)">Read Comic</button>
-            </div>
+<div id="comic" class="section">
+    <h2>Visual Storytelling & Comic Art</h2>
+    <div class="project-panel">
+        
+        <div class="project-visual comic-visual-fixed">
+            <img src="comic/01_cover.jpg" alt="Comic Cover" onclick="openLightbox('comic', 0)">
         </div>
+        
+        <div class="project-info">
+            <h3>The World You Put Me In</h3>
+            <p>A 15-page black and white comic about escapism and projection. A young man falls in love with a fantasy version of a stranger, only to realize he cares more for his own creation than the actual person.</p>
+            
+            <button class="btn-read" onclick="openLightbox('comic', 0)">Read Comic</button>
+            
+            <!-- HIER EINGEFÜGT: Innerhalb von project-info, unter dem Button -->
+            <div style="margin-top: 25px; border-top: 1px solid #333; padding-top: 15px;">
+                <small><b>Made with:</b><br>
+                Krita, Photoshop.</small>
+            </div>
+            
+        </div>
+        
     </div>
+</div>
 
 <div id="films" class="section">
     <h2>Short Film Production</h2>
 
+    <!-- 1. PROJEKT: PULSE (Video links, Text rechts) -->
     <div class="project-card exhibit-row">
         <div class="exhibit-video-box video-side">
             <iframe src="https://www.youtube.com/embed/fbkOTVymdUk?rel=0" frameborder="0" allowfullscreen></iframe>
@@ -176,47 +188,58 @@
         <div class="project-info">
             <h3>PULSE</h3>
             <p style="font-size: 12px; color: #00bcd4; margin-bottom: 10px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px;">
-                Collaborative Short Film | Post-Production Focus
+                Collaborative Short Film 
             </p>
             <p>
-                "PULSE" is a collaborative short film project where I was heavily involved in the core concept, art direction, and overall production. 
-                My technical focus lay in post-production, specifically shaping the narrative pacing and atmosphere through video and audio editing.
+                Showcased at the <i>4th International Technical University of Kenya - Exploring Visual Cultures Conference of Artificial Intelligence</i>, <b>"PULSE"</b> is a sci-fi short film exploring humanity's over-reliance on technology. Set in an exaggerated future, society has surrendered all critical thinking to AI assistants.
+            </p>
+            <p>
+                When the central system temporarily fails, absurd chaos ensues: citizens are left paralyzed without algorithmic guidance, resulting in people commuting in their pajamas or waiting for non-existent traffic. The narrative follows a protagonist who attempts to break free from this failing system, only to discover the grim reality of his lost autonomy.
             </p>
 
             <div style="margin-top: 15px; border-top: 1px solid #333; padding-top: 15px;">
                 <small>
-                    <b>Solo Contributions:</b><br>
-                    <b>Post-Production:</b> Editing & Audio Design (Scene 06:38 – 09:10)<br>
-                    <b>Credits:</b> Illustration and animation
+                    <b>Co-Roles:</b><br>
+                    Concept & Script, Production, Creative Direction, 2nd Camera.
                 </small>
                 <br><br>
                 <small>
-                    <b>Co-Roles:</b><br>
-                    Concept & Script, Production, Creative Direction, 2nd Camera.
+                    <b>Solo Contributions:</b><br>
+                    <b>Post-Production:</b> Editing & Audio Design (Scene 06:38 – 09:10)<br>
+                    <b>Credits:</b> Illustration & Animation
                 </small>
             </div>
         </div>
     </div>
 
+    <!-- 2. PROJEKT: NEXUS (Text links, Video rechts -> für dynamisches Scrollen!) -->
     <div class="project-card exhibit-row">
         <div class="project-info">
             <h3>NEXUS</h3>
             <p style="font-size: 12px; color: #00bcd4; margin-bottom: 10px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px;">
                 Collaborative Short Film | Concept & Production
             </p>
+            
             <p>
-                My first foray into live-action filmmaking. "NEXUS" provided a foundational experience in on-set problem solving, collaborative scriptwriting, and directing. I assisted across multiple departments, from camera work to final editing, ensuring a cohesive creative vision.
+                Awarded <b>"Best Movie"</b> and <b>"Best Screenplay"</b> at the LMU Oscars, <b>"NEXUS"</b> is a genre-bending short film exploring the theme of "the rift". The narrative follows a protagonist who escapes his reality by slipping into various cinematic universes, always confronting the same villain.
+            </p>
+            
+            <p>
+                In reality, the protagonist is simply a man facing bankruptcy. To cope with his situation, he retreats into movies and reimagines the local mail carrier, who delivers his bills and eviction notices, as his ultimate nemesis. The project serves as a satirical take on escapism and classic movie tropes.
             </p>
             
             <div style="margin-top: 15px; border-top: 1px solid #333; padding-top: 15px;">
-                <small><b>Co-Roles:</b> Concept & Script, Production Team, On-site Assistance, Creative Direction, 2nd Camera, Post-Production.</small>
+                <small style="color: #fdfefe;"><b>Awards:</b> LMU Oscar for Best Movie & Best Screenplay</small>
+                <br><br>
+                <small><b>Co-Roles:</b> Concept & Script, Production, Creative Direction, 2nd Camera, Post-Production.</small>
             </div>
         </div>
-        
+
         <div class="exhibit-video-box video-side">
             <iframe src="https://www.youtube.com/embed/xfQ1zUqHuC0?rel=0" frameborder="0" allowfullscreen></iframe>
         </div>
     </div>
+
 </div>
 
 <div id="animation" class="section">
@@ -228,20 +251,19 @@
         </div>
         
         <div class="project-info">
-            <h3>Abstract Motion Design</h3>
+            <h3>APOCALYPSE</h3>
             <p style="font-size: 12px; color: #00bcd4; margin-bottom: 10px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px;">
                 Solo Project | 2D Animation Pipeline
             </p>
             <p>
-                A dynamic motion design piece exploring visual rhythm and digital illustration techniques. This project demonstrates a complete solo animation pipeline—from initial asset creation to final compositing.
-            </p>
-            <p>
-                By combining frame-by-frame animation with digital effects, the piece focuses on smooth transitions, timing, and atmospheric visual storytelling.
+                <b>"APOCALYPSE"</b> is an abstract, atmospheric 2D animation that follows a lone robot navigating a dystopian cityscape. Driven by a striking, high-contrast color palette, the project functions more like a visual poem or music video than a traditional short film. 
+                <br>
+                The focus lies entirely on establishing mood, visual rhythm, and environmental storytelling through dynamic motion design.
             </p>
             
             <div style="margin-top: 15px; border-top: 1px solid #333; padding-top: 15px;">
                 <small><b>Software Stack:</b><br>
-                Krita (Assets & Frame Animation), Adobe After Effects (Motion & VFX), Premiere Pro (Editing), Photoshop.</small>
+                Krita (Assets & Frame Animation), Adobe After Effects (Motion & VFX), Premiere Pro (Editing), Photoshop.</small> 
             </div>
         </div>
     </div>
@@ -254,8 +276,7 @@
             </p>
             <p>
                 To give the collaborative short film "PULSE" a unique visual conclusion, I illustrated and animated the entire end credits sequence from scratch. 
-            </p>
-            <p>
+                <br>
                 This sequence relies on frame-by-frame and After Effects 2D animation, creating a continuous, flowing visual narrative that reflects the psychological themes of the movie.
             </p>
             
