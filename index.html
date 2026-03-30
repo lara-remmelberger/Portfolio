@@ -3,90 +3,163 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- Navigation -->
-<nav>
-    <h1>Portfolio</h1>
-    <ul>
-        <li><a href="#game">Game</a></li>
-        <li><a href="#exhibit">Exhibit</a></li>
-        <li><a href="#comic">Comic</a></li>
-    </ul>
-</nav>
+    <!-- Navigation -->
+    <nav>
+        <h1>Portfolio Lara Remmelberger </h1>
+        <ul>
+            <li><a href="#game">Game Development</a></li>
+            <li><a href="#exhibit">Physical Computing</a></li>
+            <li><a href="#comic">Comic</a></li>
+        </ul>
+    </nav>
 
-<!-- Section: Game -->
+<!-- Section: Game (Full Width Landscape) -->
 <div id="game" class="section">
     <h2>Interactive Media & Game Development</h2>
-    <div class="project-panel">
-        <div class="project-visual">
-            <div class="game-frame-container">
-                <iframe src="game/index.html"></iframe>
-            </div>
+    
+    <div class="game-landscape-container">
+        <h3>Breathing Underwater – An Animated Story Game</h3>
+
+        <div class="game-frame-wrapper">
+            <iframe src="game/index.html"></iframe>
         </div>
-        <div class="project-info">
-            <h3>Breathing Underwater – A Unity Game</h3>
-            <p>An immersive experience developed in Unity. This project explores atmosphere and environmental storytelling through unique movement mechanics and underwater aesthetics.</p>
-            <p><small><b>Tools:</b> Unity, C#, 3D Modeling, Level Design.</small></p>
+
+        <div class="project-card" style="margin-top: 20px; display: flex; gap: 40px; align-items: flex-start;">
+            <div class="project-info">
+                <p style="font-size: 12px; color: #00bcd4; margin-bottom: 10px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px;">
+                    Unity-based Narrative Experience | Psychological Drama
+                </p>
+                <p>
+                    <b>"Breathing Underwater"</b> is an animated story game that explores alienation through a surrealist lens. Players navigate a protagonist’s mundane routines as his reality gradually warps into the uncanny -from telephones dangling from ceilings to strangers with goldfish bowls for heads.
+                </p>
+                <p>
+                    Built in <b>Unity</b>, the project focuses on <b>narrative branching</b> and player agency. Through critical dialogue choices, players directly shape the emotional arc, experiencing the psychological tension of estrangement firsthand.
+                </p>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px; border-top: 1px solid #333; padding-top: 15px;">
+                    <div>
+                        <small><b>Narrative Design:</b><br>Implementation of branching storylines and multiple endings.</small>
+                    </div>
+                    <div>
+                        <small><b>Technical Art:</b><br>Blending hand-drawn 2D aesthetics with interactive logic in Unity.</small>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 
-<!-- Section: Exhibit -->
+    <!-- Section: Exhibit (New Grid Arrangement) -->
 <div id="exhibit" class="section">
-    <h2>Physical Computing & Exhibition Design</h2>
-    <div class="project-panel">
-        <div class="project-visual">
-            <div class="mini-gallery">
-                <img id="exhibit-display" src="exhibit/exhibit_01.png" alt="Exhibit" onclick="openLightbox('exhibit', exhibitGalleryIndex)">
-                <div class="gallery-nav">
-                    <button onclick="prevExhibit()">❮</button>
-                    <span id="exhibit-counter">1 / 4</span>
-                    <button onclick="nextExhibit()">❯</button>
-                </div>
-            </div>
-            <a href="exhibit/doku.pdf" target="_blank" class="btn-read" style="width:100%; text-align:center; box-sizing: border-box;">Read Documentation (PDF)</a>
-        </div>
-        <div class="project-info">
-            <h3>Media Bias: The Weight of Your Trust</h3>
-            <p>How much does the medium influence our trust? This interactive installation features a physical scale that tilts based on visitor votes, visualizing collective skepticism toward AI. By showcasing a timeline of historical media critiques, it prompts visitors to re-evaluate their own biases.</p>
-            <p><small><b>My Role:</b> Concept, Hardware Programming (MicroPython/Raspberry Pi Pico), Interaction Design, and Video Production. Fabrication in collaboration with N. Menzl.</small></p>
+    <h2>Interaction Design & Hardware Prototyping</h2>
+    
+    <!-- Row 1: Text LEFT, Video RIGHT -->
+<!-- Row 1: Concept & Vision (Shortened Version) -->
+<div class="project-card exhibit-row">
+    <div class="project-info">
+        <h3>Concept & Vision</h3>
+        <p style="font-size: 12px; color: #00bcd4; margin-bottom: 10px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px;">
+            Seminar Brief: Interactive AI-reflection in museums.
+        </p>
+        <p>
+            <b>"Media Bias"</b> explores the "Weight of Trust" - investigating how an information's medium dictates our perception of its trustworthiness. While AI faces modern skepticism, this installation reminds visitors that books, radio, and the internet once faced identical doubt.
+
+            By comparing a historical media timeline with a real-time binary vote -<i>"AI vs. Media of the Past"</i>- the exhibit prompts visitors to deconstruct their own preconceptions and reflect on why they trust certain media more than others.
+
+            A physical voting system translates abstract opinions into mechanical movement: an antique-style scale tilts in real-time, giving a tangible form to the digital debate.
+        </p>
+    </div>
+    <div class="exhibit-video-box video-side">
+        <iframe src="https://www.youtube.com/embed/7KUfS_qaQ1Q" 
+                frameborder="0" 
+                allowfullscreen >
+        </iframe>
+    </div>
+</div>
+
+<!-- Row 2: Gallery LEFT, Technical Info & PDF RIGHT -->
+<div class="project-card exhibit-row">
+    <div class="gallery-side">
+        <div class="mini-gallery">
+            <img id="exhibit-display" src="exhibit/exhibit_01.png" ...>
             
-            <div class="exhibit-video">
-                <iframe width="100%" height="200" src="https://www.youtube.com/embed/7KUfS_qaQ1Q" frameborder="0" allowfullscreen style="margin-top:15px; border-radius:5px;"></iframe>
-            </div>
-
-            <div class="messe-section">
-                <h4>Exhibition @ Deutsches Museum</h4>
-                <p><small>Showcased at the Explorer Day (XR Hub Bavaria). Presented to high-profile guests, including State Minister Dr. Florian Herrmann.</small></p>
-                <div class="messe-grid">
-                    <img src="exhibit/01_messe.jpeg" onclick="openLightbox('messe', 0)">
-                    <img src="exhibit/02_messe.jpeg" onclick="openLightbox('messe', 1)">
-                    <img src="exhibit/03_messe.jpeg" onclick="openLightbox('messe', 2)">
-                    <img src="exhibit/04_messe.jpeg" onclick="openLightbox('messe', 3)">
-                </div>
+            <!-- Dieser Teil muss sichtbar bleiben -->
+            <div class="gallery-nav">
+                <button onclick="prevExhibit()">❮</button>
+                <span id="exhibit-counter">1 / 4</span>
+                <button onclick="nextExhibit()">❯</button>
             </div>
         </div>
     </div>
-</div>
+    <div class="project-info">
+        <h3>Technical Implementation</h3>
+        
+        <p>
+            <b>Hardware Stack:</b> Powered by a <b>Raspberry Pi Pico W</b> (MicroPython), using a <b>NEMA stepper motor</b> for precise scale tilting and an <b>OLED display</b> for real-time vote tracking.
+        </p>
+        <p>
+            <b>Interaction Design:</b> Visitors cast their vote via two large-scale buttons, deciding whether to trust AI as an information source. The current vote ratio is instantly visualized by the tilting scale and digital display.
+        </p>
 
-<!-- Section: Comic -->
-<div id="comic" class="section">
-    <h2>Visual Storytelling & Comic Art</h2>
-    <div class="project-panel">
-        <div class="project-visual">
-            <img src="comic/01_cover.jpg" alt="Comic Cover" class="fixed-aspect-img" onclick="openLightbox('comic', 0)">
-        </div>
-        <div class="project-info">
-            <h3>The World You Put Me In</h3>
-            <p>A 15-page black and white comic about escapism and projection. A young man falls in love with a fantasy version of a stranger, only to realize he cares more for his own creation than the actual person. Told through stark visual metaphors.</p>
-            <button class="btn-read" onclick="openLightbox('comic', 0)">Read Comic</button>
-        </div>
+        <p>
+            <b>Context:</b> A curated timeline of historical quotes (Plato to Pulitzer) frames modern AI skepticism as a recurring media pattern.
+        </p>
+
+        <p>
+            <small><b>Key Contributions:</b> Concept, Hardware Programming, Interaction Design.</small>
+        </p>
+
+        <a href="exhibit/doku.pdf" target="_blank" class="btn-read">Read Documentation (PDF)</a>
     </div>
 </div>
+
+    <!-- Messe Sektion (Bleibt wie besprochen) -->
+    <div class="project-card messe-full-width">
+        <h4>Exhibition @ Deutsches Museum</h4>
+        
+        <!-- Die Bildergalerie jetzt oben in einer großen Reihe -->
+        <div class="messe-grid-full">
+            <img src="exhibit/01_messe.jpeg" alt="Messe 1" onclick="openLightbox('messe', 0)">
+            <img src="exhibit/02_messe.png" alt="Messe 2" onclick="openLightbox('messe', 1)">
+            <img src="exhibit/03_messe.jpeg" alt="Messe 3" onclick="openLightbox('messe', 2)">
+            <img src="exhibit/04_messe.jpeg" alt="Messe 4" onclick="openLightbox('messe', 3)">
+        </div>
+
+    <!-- Die Beschreibung jetzt darunter -->
+        <div class="messe-description-bottom">
+        <p>
+            Developed in cooperation with the <b>Deutsches Museum Digital</b>, this project was featured at the <b>Explorer Day</b>, hosted by <b>XR Hub Bavaria</b> at the Deutsches Museum Munich. 
+        </p>
+        <p>
+            The showcase allowed for direct interaction with a public audience. A highlight was presenting the hardware and concept to <b>State Minister Dr. Fabian Mehring</b> and discussing the role of AI in educational contexts.
+        </p>
+
+        <p style="font-size: 11px; color: #777; margin-top: 15px; border-top: 1px solid #333; padding-top: 10px;">
+        Image 2 courtesy of <a href="https://www.instagram.com/xrhub_bavaria/" target="_blank" style="color: #777; text-decoration: underline;">XR HUB Bavaria</a>.
+        </p>
+        </div>
+</div>
+</div>
+
+    <!-- Section: Comic (Compact Box) -->
+    <div id="comic" class="section">
+        <h2>Visual Storytelling & Comic Art</h2>
+        <div class="project-panel">
+            <div class="project-visual comic-visual-fixed">
+                <img src="comic/01_cover.jpg" alt="Comic Cover" onclick="openLightbox('comic', 0)">
+            </div>
+            <div class="project-info">
+                <h3>The World You Put Me In</h3>
+                <p>A 15-page black and white comic about escapism and projection. A young man falls in love with a fantasy version of a stranger, only to realize he cares more for his own creation than the actual person.</p>
+                <button class="btn-read" onclick="openLightbox('comic', 0)">Read Comic</button>
+            </div>
+        </div>
+    </div>
 
     <!-- Lightbox -->
     <div id="lightbox" class="lightbox">

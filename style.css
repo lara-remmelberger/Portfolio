@@ -1,4 +1,6 @@
-/* Base Styling */
+/* ==========================================================================
+   Base Styling & Navigation
+   ========================================================================== */
 body {
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -7,7 +9,6 @@ body {
     line-height: 1.6;
 }
 
-/* Navigation Bar */
 nav {
     background-color: #1e1e1e;
     padding: 15px 30px;
@@ -19,11 +20,13 @@ nav {
     z-index: 1000;
     box-shadow: 0 4px 6px rgba(0,0,0,0.5);
 }
+
 nav h1 {
     margin: 0;
     font-size: 24px;
     color: #00bcd4; 
 }
+
 nav ul {
     list-style: none;
     margin: 0;
@@ -31,22 +34,27 @@ nav ul {
     display: flex;
     gap: 25px;
 }
+
 nav a {
     color: #ffffff;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s;
 }
+
 nav a:hover {
     color: #00bcd4;
 }
 
-/* Sections */
-.section, .game-container {
-    max-width: 1000px;
+/* ==========================================================================
+   Shared Layout Components
+   ========================================================================== */
+.section {
+    max-width: 1100px;
     margin: 60px auto 80px auto;
     padding: 0 20px;
 }
+
 .section h2 {
     border-bottom: 2px solid #333;
     padding-bottom: 10px;
@@ -54,155 +62,236 @@ nav a:hover {
     font-size: 28px;
 }
 
-/* Unity Game */
-iframe {
-    width: 100%;
-    height: 600px; 
-    border: none;
-    border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.7);
-    background-color: #000; 
-}
-
-/* Video Grid */
-.video-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 25px;
-}
-.video-card {
-    background-color: #1e1e1e;
-    border-radius: 10px;
-    overflow: hidden;
-    text-align: center;
-    padding-bottom: 20px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-}
-
-/* Panel/Box Design (Comic & Exhibit) */
-.project-panel {
-    display: flex;
-    gap: 30px;
+/* Generic Project Box Styling */
+.project-card {
     background-color: #1e1e1e;
     padding: 30px;
     border-radius: 10px;
-    align-items: flex-start;
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-}
-.project-visual {
-    width: 350px;
-    flex-shrink: 0;
-}
-.project-info {
-    flex: 1;
+    margin-bottom: 25px;
 }
 
-/* Exhibit Mini-Gallery Styles */
-.mini-gallery {
-    background: #000;
-    border-radius: 5px;
-    overflow: hidden;
-    margin-bottom: 10px;
-    aspect-ratio: 16 / 9; 
-    display: flex;
-    flex-direction: column;
-    border: 1px solid #333;
-}
-
-#exhibit-display {
-    width: 100%;
-    height: 100%;
-    object-fit: contain; 
-    cursor: pointer;
-    flex-grow: 1;
-    display: block;
-}
-
-.gallery-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 8px 15px;
-    background: #1e1e1e;
-    font-size: 14px;
-    border-top: 1px solid #333;
-}
-
-.gallery-nav button {
-    background: #00bcd4;
-    border: none;
-    color: #121212;
-    padding: 5px 12px;
-    border-radius: 3px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s;
-}
-
-.gallery-nav button:hover {
-    background-color: #008ba3;
-}
-
-/* Messe Picture Grid */
-.messe-section {
-    margin-top: 25px;
-    padding-top: 20px;
-    border-top: 1px solid #333;
-}
-
-.messe-section h4 {
-    margin: 0 0 10px 0;
-    font-size: 18px;
-    color: #00bcd4;
-}
-
-.messe-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    margin-top: 10px;
-}
-
-.messe-grid img {
-    width: 100%;
-    height: 75px;
-    object-fit: cover;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border: 1px solid transparent;
-}
-
-.messe-grid img:hover { 
-    transform: scale(1.05); 
-    border-color: #00bcd4;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-}
-
-@media (max-width: 480px) {
-    .messe-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-/* Buttons */
 .btn-read {
     background-color: #00bcd4;
     color: #121212 !important;
     text-decoration: none;
-    padding: 12px 24px;
+    padding: 10px 20px; /* Etwas weniger Padding */
     font-size: 14px;
     font-weight: bold;
     border-radius: 5px;
     display: inline-block;
-    margin-top: 15px;
     transition: background-color 0.3s;
     border: none;
     cursor: pointer;
+    text-align: center;
+    /* Neu: Breite begrenzen */
+    width: auto; 
+    min-width: 150px; 
+    max-width: 250px; 
 }
-.btn-read:hover { background-color: #008ba3; }
 
-/* Lightbox */
+.btn-read:hover { 
+    background-color: #008ba3; 
+}
+
+/* ==========================================================================
+   GAME SECTION
+   ========================================================================== */
+.game-landscape-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.game-landscape-container h3 {
+    margin: 0;
+    color: #fefefe;
+    font-size: 22px;
+}
+
+.game-frame-wrapper {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    background: #000;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.game-frame-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* ==========================================================================
+   EXHIBIT SECTION (Horizontal Alignment)
+   ========================================================================== */
+
+.exhibit-row {
+    display: flex;          /* Nutze Flexbox für zwei Spalten */
+    align-items: center;    /* Vertikal mittig ausrichten */
+    justify-content: space-between;
+    gap: 40px;              /* Abstand zwischen Galerie und Text */
+    background: #1e1e1e;
+    padding: 30px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+/* Linke Seite: Die Galerie */
+.gallery-side {
+    flex: 1.2;              /* Nimmt etwas mehr Platz ein (Verhältnis 1.2 zu 1) */
+    max-width: 55%;         /* Begrenzt die Breite, damit Text genug Platz hat */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.exhibit-video-box {
+    width: 100%;
+    /* Das Seitenverhältnis sorgt dafür, dass die Höhe IMMER zur Breite passt */
+    aspect-ratio: 16 / 9; 
+    background: #000;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.exhibit-video-box iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.video-side {
+    /* Hebel: Ändere 1.5 in 1.2 (kleiner) oder 1.8 (größer) */
+    flex: 1; 
+    min-width: 300px; /* Verhindert, dass das Video auf Handys zu winzig wird */
+}
+
+.exhibit-row .project-info {
+    flex: 1;
+}
+/* Rechte Seite: Der Text */
+.project-info {
+    flex: 1;                /* Nimmt den restlichen Platz ein */
+}
+
+/* Das Bild innerhalb der Galerie */
+#exhibit-display {
+    height: 350px;          /* DEINE FESTE HÖHE */
+    width: 100%;            /* Füllt die gallery-side Spalte aus */
+    object-fit: contain;    /* Verhindert Verzerrung */
+    background: #141414; 
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.gallery-nav {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 15px;
+    width: 100%;
+}
+
+/* ==========================================================================
+   EXHIBIT SECTION - PART 3: EXPLORER DAY (Full Width Layout)
+   ========================================================================== */
+
+.messe-full-width {
+    margin-top: 30px;
+    background: #1e1e1e;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.messe-full-width h4 {
+    color: #00bcd4;
+    font-size: 22px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 10px;
+}
+
+/* Die Bildergalerie in einer großen 4er-Reihe oben */
+.messe-grid-full {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 15px;
+    margin-bottom: 25px; /* Abstand zum Text darunter */
+}
+
+.messe-grid-full img {
+    width: 100%;
+    height: 200px; /* Schön groß für maximale Wirkung */
+    object-fit: cover;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease, border 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.messe-grid-full img:hover { 
+    transform: scale(1.03); 
+    border-color: #00bcd4;
+}
+
+/* Die Beschreibung unter der Galerie */
+.messe-description-bottom {
+    padding-top: 10px;
+    color: #aaaaaa;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.messe-description-bottom b {
+    color: #ffffff; /* Hebt "Explorer Day" etc. dezent hervor */
+}
+
+/* Responsive: Auf Tablets/Handys 2x2, damit die Bilder nicht zu schmal werden */
+@media (max-width: 768px) {
+    .messe-grid-full {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    
+    .messe-grid-full img {
+        height: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .messe-grid-full {
+        grid-template-columns: 1fr; /* Auf kleinen Handys alles untereinander */
+    }
+}
+
+/* ==========================================================================
+   COMIC SECTION
+   ========================================================================== */
+.project-panel {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.comic-visual-fixed {
+    width: 280px;
+    flex-shrink: 0;
+}
+
+.comic-visual-fixed img {
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+/* ==========================================================================
+   Lightbox & Global Utilities
+   ========================================================================== */
 .lightbox {
     display: none;
     position: fixed;
@@ -213,11 +302,13 @@ iframe {
     justify-content: center;
     align-items: center;
 }
+
 .lightbox img {
     max-width: 90%;
     max-height: 90vh;
     border-radius: 5px;
 }
+
 .lightbox-controls {
     position: absolute;
     color: #fff;
@@ -225,11 +316,34 @@ iframe {
     cursor: pointer;
     user-select: none;
 }
+
 .lb-close { top: 20px; right: 40px; }
 .lb-prev { left: 40px; }
 .lb-next { right: 40px; }
 
-@media (max-width: 768px) {
-    .project-panel { flex-direction: column; align-items: center; }
-    .project-visual { width: 100%; max-width: 350px; }
+/* ==========================================================================
+   Responsive Adjustments
+   ========================================================================== */
+@media (max-width: 850px) {
+    .exhibit-row, .messe-content, .project-panel {
+        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
+    }
+    .messe-content {
+            grid-template-columns: 1fr;
+        }
+        .messe-grid {
+            grid-template-columns: repeat(2, 1fr); 
+        }
+    .exhibit-video-box, .gallery-side {
+        order: -1; 
+        margin-bottom: 20px;
+    }
+
+    .comic-visual-fixed {
+        width: 100%;
+        max-width: 300px;
+        margin-bottom: 20px;
+    }
 }
