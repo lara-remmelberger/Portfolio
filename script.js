@@ -1,33 +1,51 @@
-// Bilder-Listen
+// Image Lists
 const comicPages = [
-    "comic/01_cover.jpg", "comic/02_spread.jpg", "comic/03_spread.jpg", 
-    "comic/04_spread.jpg", "comic/05_spread.jpg", "comic/06_spread.jpg", 
-    "comic/07_spread.jpg", "comic/08_spread.jpg"
+    "comic/01_cover.jpg", 
+    "comic/02_spread.jpg", 
+    "comic/03_spread.jpg", 
+    "comic/04_spread.jpg", 
+    "comic/05_spread.jpg", 
+    "comic/06_spread.jpg", 
+    "comic/07_spread.jpg", 
+    "comic/08_spread.jpg"
 ];
 
 const exhibitImages = [
-    "exhibit/exhibit_01.png", "exhibit/exhibit_02.png", 
-    "exhibit/exhibit_03.png", "exhibit/exhibit_04.png"
+    "exhibit/exhibit_01.png", 
+    "exhibit/exhibit_02.png", 
+    "exhibit/exhibit_03.png", 
+    "exhibit/exhibit_04.png"
 ];
 
 const messeImages = [
-    "exhibit/01_messe.jpg", "exhibit/02_messe.jpg", 
-    "exhibit/03_messe.jpg", "exhibit/04_messe.jpg"
+    "exhibit/01_messe.jpeg", 
+    "exhibit/02_messe.jpeg", 
+    "exhibit/03_messe.jpeg", 
+    "exhibit/04_messe.jpeg"
 ];
 
-// Status-Variablen
+// State Variables
 let currentImages = [];
 let currentIndex = 0;
-let exhibitGalleryIndex = 0; // Für die Mini-Vorschau
+let exhibitGalleryIndex = 0; // Index for the mini-gallery preview
 
-// LIGHTBOX LOGIK
+// LIGHTBOX LOGIC
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightbox-img');
 
+/**
+ * Opens the lightbox with a specific set of images.
+ * @param {string} type - 'comic', 'exhibit', or 'messe'
+ * @param {number} index - Starting image index
+ */
 function openLightbox(type, index) {
-    if (type === 'comic') currentImages = comicPages;
-    else if (type === 'exhibit') currentImages = exhibitImages;
-    else if (type === 'messe') currentImages = messeImages;
+    if (type === 'comic') {
+        currentImages = comicPages;
+    } else if (type === 'exhibit') {
+        currentImages = exhibitImages;
+    } else if (type === 'messe') {
+        currentImages = messeImages;
+    }
     
     currentIndex = index;
     lightbox.style.display = 'flex';
@@ -38,18 +56,29 @@ function closeLightbox() {
     lightbox.style.display = 'none';
 }
 
+/**
+ * Navigates through the lightbox images.
+ * @param {number} step - Direction (1 for next, -1 for previous)
+ */
 function changeImage(step) {
+    if (currentImages.length === 0) return;
+    
     currentIndex += step;
-    if(currentIndex < 0) currentIndex = currentImages.length - 1;
-    if(currentIndex >= currentImages.length) currentIndex = 0;
+    if (currentIndex < 0) {
+        currentIndex = currentImages.length - 1;
+    } else if (currentIndex >= currentImages.length) {
+        currentIndex = 0;
+    }
     updateLightboxImage();
 }
 
 function updateLightboxImage() {
-    lightboxImg.src = currentImages[currentIndex];
+    if (currentImages[currentIndex]) {
+        lightboxImg.src = currentImages[currentIndex];
+    }
 }
 
-// MINI-GALLERY LOGIK (Für den Exhibit Bereich)
+// MINI-GALLERY LOGIK (For the Exhibit panel preview)
 function nextExhibit() {
     exhibitGalleryIndex = (exhibitGalleryIndex + 1) % exhibitImages.length;
     updateMiniGallery();
@@ -61,17 +90,35 @@ function prevExhibit() {
 }
 
 function updateMiniGallery() {
-    const img = document.getElementById('exhibit-display');
-    const counter = document.getElementById('exhibit-counter');
-    if(img) img.src = exhibitImages[exhibitGalleryIndex];
-    if(counter) counter.innerText = (exhibitGalleryIndex + 1) + " / " + exhibitImages.length;
+    const imgElement = document.getElementById('exhibit-display');
+    const counterElement = document.getElementById('exhibit-counter');
+    
+    if (imgElement) {
+        imgElement.src = exhibitImages[exhibitGalleryIndex];
+    }
+    if (counterElement) {
+        counterElement.innerText = (exhibitGalleryIndex + 1) + " / " + exhibitImages.length;
+    }
 }
 
-// Event Listener für Keyboard
+// Keyboard Controls for better User Experience
 document.addEventListener('keydown', function(e) {
-    if(lightbox.style.display === 'flex') {
-        if(e.key === 'ArrowLeft') changeImage(-1);
-        if(e.key === 'ArrowRight') changeImage(1);
-        if(e.key === 'Escape') closeLightbox();
+    if (lightbox && lightbox.style.display === 'flex') {
+        if (e.key === 'ArrowLeft') {
+            changeImage(-1);
+        } else if (e.key === 'ArrowRight') {
+            changeImage(1);
+        } else if (e.key === 'Escape') {
+            closeLightbox();
+        }
     }
 });
+
+// Close lightbox when clicking outside the image
+if (lightbox) {
+    lightbox.addEventListener('click', function(e) {
+        if (e.target === lightbox) {
+            closeLightbox();
+        }
+    });
+}

@@ -8,97 +8,85 @@
 </head>
 <body>
 
-    <!-- Navigation -->
-    <nav>
-        <h1>My Portfolio</h1>
-        <ul>
-            <li><a href="#game">Game</a></li>
-            <li><a href="#videos">Videos</a></li>
-            <li><a href="#exhibit">Exhibit</a></li>
-            <li><a href="#comic">Comic</a></li>
-        </ul>
-    </nav>
+<!-- Navigation -->
+<nav>
+    <h1>Portfolio</h1>
+    <ul>
+        <li><a href="#game">Game</a></li>
+        <li><a href="#exhibit">Exhibit</a></li>
+        <li><a href="#comic">Comic</a></li>
+    </ul>
+</nav>
 
-    <!-- Unity Game -->
-    <div id="game" class="game-container">
-        <iframe src="game/index.html"></iframe>
-    </div>
-
-    <!-- Video section -->
-    <div id="videos" class="section">
-        <h2>🎬 Animation, Film & Interaction Design</h2>
-        <div class="video-grid">
-            <div class="video-card">
-                <iframe width="100%" height="220" src="https://www.youtube.com/embed/63shdxQj6n0" frameborder="0" allowfullscreen></iframe>
-                <h3>Motion Design</h3>
-                <p>Animated Short / Motion Graphics</p>
-            </div>
-            <div class="video-card">
-                <iframe width="100%" height="220" src="https://www.youtube.com/embed/fbkOTVymdUk" frameborder="0" allowfullscreen></iframe>
-                <h3>PULSE</h3>
-                <p>Short Film / Credits Animation</p>
-            </div>
-            <div class="video-card">
-                <iframe width="100%" height="220" src="https://www.youtube.com/embed/xfQ1zUqHuC0" frameborder="0" allowfullscreen></iframe>
-                <h3>NEXUS</h3>
-                <p>Short Film</p>
-            </div>
-            <div class="video-card">
-                <iframe width="100%" height="220" src="https://www.youtube.com/embed/7KUfS_qaQ1Q" frameborder="0" allowfullscreen></iframe>
-                <h3>Media Bias Exhibit</h3>
-                <p>Deutsches Museum Trailer</p>
+<!-- Section: Game -->
+<div id="game" class="section">
+    <h2>Interactive Media & Game Development</h2>
+    <div class="project-panel">
+        <div class="project-visual">
+            <div class="game-frame-container">
+                <iframe src="game/index.html"></iframe>
             </div>
         </div>
+        <div class="project-info">
+            <h3>Breathing Underwater – A Unity Game</h3>
+            <p>An immersive experience developed in Unity. This project explores atmosphere and environmental storytelling through unique movement mechanics and underwater aesthetics.</p>
+            <p><small><b>Tools:</b> Unity, C#, 3D Modeling, Level Design.</small></p>
+        </div>
     </div>
+</div>
 
-    <!-- NEW: Exhibit Section -->
-    <div id="exhibit" class="section">
-        <h2>Physical Computing & Exhibition Design</h2>
-        <div class="project-panel">
-            <div class="project-visual">
-                <div class="mini-gallery">
-                    <img id="exhibit-display" src="exhibit/exhibit_01.png" alt="Exhibit" onclick="openLightbox('exhibit', exhibitGalleryIndex)">
-                    <div class="gallery-nav">
-                        <button onclick="prevExhibit()">❮</button>
-                        <span id="exhibit-counter">1 / 4</span>
-                        <button onclick="nextExhibit()">❯</button>
-                    </div>
+<!-- Section: Exhibit -->
+<div id="exhibit" class="section">
+    <h2>Physical Computing & Exhibition Design</h2>
+    <div class="project-panel">
+        <div class="project-visual">
+            <div class="mini-gallery">
+                <img id="exhibit-display" src="exhibit/exhibit_01.png" alt="Exhibit" onclick="openLightbox('exhibit', exhibitGalleryIndex)">
+                <div class="gallery-nav">
+                    <button onclick="prevExhibit()">❮</button>
+                    <span id="exhibit-counter">1 / 4</span>
+                    <button onclick="nextExhibit()">❯</button>
                 </div>
-                <a href="exhibit/doku.pdf" target="_blank" class="btn-read" style="width:100%; text-align:center; box-sizing: border-box;">Dokumentation (PDF)</a>
             </div>
-            <div class="project-info">
-                <h3>Media Bias: The Weight of Your Trust</h3>
-                <p>Ein interaktives Museumsexponat, das das Vertrauen in KI thematisiert. Über eine physische Waage wird das kollektive Meinungsbild visualisiert.</p>
-                <p><small><b>Credits:</b> Konzept, Interaktionsdesign, Hardware & Programmierung, Trailer. Physischer Bau mit N. Menzl.</small></p>
-                
-                <div class="messe-section">
-                    <h4>Präsentation @ Deutsches Museum</h4>
-                    <p><small>Explorer Day & XR Hub Bavaria. Fachgespräche u.a. mit Staatsminister Dr. Florian Herrmann.</small></p>
-                    <div class="messe-grid">
-                        <img src="exhibit/01_messe.jpg" onclick="openLightbox('messe', 0)">
-                        <img src="exhibit/02_messe.jpg" onclick="openLightbox('messe', 1)">
-                        <img src="exhibit/03_messe.jpg" onclick="openLightbox('messe', 2)">
-                        <img src="exhibit/04_messe.jpg" onclick="openLightbox('messe', 3)">
-                    </div>
+            <a href="exhibit/doku.pdf" target="_blank" class="btn-read" style="width:100%; text-align:center; box-sizing: border-box;">Read Documentation (PDF)</a>
+        </div>
+        <div class="project-info">
+            <h3>Media Bias: The Weight of Your Trust</h3>
+            <p>How much does the medium influence our trust? This interactive installation features a physical scale that tilts based on visitor votes, visualizing collective skepticism toward AI. By showcasing a timeline of historical media critiques, it prompts visitors to re-evaluate their own biases.</p>
+            <p><small><b>My Role:</b> Concept, Hardware Programming (MicroPython/Raspberry Pi Pico), Interaction Design, and Video Production. Fabrication in collaboration with N. Menzl.</small></p>
+            
+            <div class="exhibit-video">
+                <iframe width="100%" height="200" src="https://www.youtube.com/embed/7KUfS_qaQ1Q" frameborder="0" allowfullscreen style="margin-top:15px; border-radius:5px;"></iframe>
+            </div>
+
+            <div class="messe-section">
+                <h4>Exhibition @ Deutsches Museum</h4>
+                <p><small>Showcased at the Explorer Day (XR Hub Bavaria). Presented to high-profile guests, including State Minister Dr. Florian Herrmann.</small></p>
+                <div class="messe-grid">
+                    <img src="exhibit/01_messe.jpeg" onclick="openLightbox('messe', 0)">
+                    <img src="exhibit/02_messe.jpeg" onclick="openLightbox('messe', 1)">
+                    <img src="exhibit/03_messe.jpeg" onclick="openLightbox('messe', 2)">
+                    <img src="exhibit/04_messe.jpeg" onclick="openLightbox('messe', 3)">
                 </div>
             </div>
         </div>
     </div>
+</div>
 
-    <!-- Comic section -->
-    <div id="comic" class="section">
-        <h2>📖 Comic Art & Storytelling</h2>
-        <div class="project-panel">
-            <div class="project-visual">
-                <img src="comic/01_cover.jpg" alt="Comic Cover" style="width:100%; border-radius:5px; cursor:pointer;" onclick="openLightbox('comic', 0)">
-            </div>
-            <div class="project-info">
-                <h3>Mein Comic Titel</h3>
-                <p>Beschreibung deines Comics hier einfügen. Erzähle etwas über die Story und deinen visuellen Stil.</p>
-                <button class="btn-read" onclick="openLightbox('comic', 0)">Read Comic</button>
-            </div>
+<!-- Section: Comic -->
+<div id="comic" class="section">
+    <h2>Visual Storytelling & Comic Art</h2>
+    <div class="project-panel">
+        <div class="project-visual">
+            <img src="comic/01_cover.jpg" alt="Comic Cover" class="fixed-aspect-img" onclick="openLightbox('comic', 0)">
+        </div>
+        <div class="project-info">
+            <h3>The World You Put Me In</h3>
+            <p>A 15-page black and white comic about escapism and projection. A young man falls in love with a fantasy version of a stranger, only to realize he cares more for his own creation than the actual person. Told through stark visual metaphors.</p>
+            <button class="btn-read" onclick="openLightbox('comic', 0)">Read Comic</button>
         </div>
     </div>
+</div>
 
     <!-- Lightbox -->
     <div id="lightbox" class="lightbox">
