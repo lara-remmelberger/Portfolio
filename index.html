@@ -4,192 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #121212;
-            color: #ffffff;
-        }
-        
-        /* Navigation Bar */
-        nav {
-            background-color: #1e1e1e;
-            padding: 15px 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.5);
-        }
-        nav h1 {
-            margin: 0;
-            font-size: 24px;
-            color: #00bcd4; 
-        }
-        nav ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            gap: 25px;
-        }
-        nav a {
-            color: #ffffff;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-        nav a:hover {
-            color: #00bcd4;
-        }
-
-        /* Unity game section */
-        .game-container {
-            width: 100%;
-            max-width: 1000px; 
-            margin: 60px auto;
-            text-align: center;
-        }
-        iframe {
-            width: 100%;
-            height: 600px; 
-            border: none;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.7);
-            background-color: #000; 
-        }
-
-        /* Common section styling */
-        .section {
-            max-width: 1000px;
-            margin: 0 auto 80px auto;
-            padding: 0 20px;
-        }
-        .section h2 {
-            border-bottom: 2px solid #333;
-            padding-bottom: 10px;
-            margin-bottom: 30px;
-            font-size: 28px;
-        }
-
-        /* Video gallery */
-        .video-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-        }
-        .video-card {
-            background-color: #1e1e1e;
-            border-radius: 10px;
-            overflow: hidden;
-            text-align: center;
-            padding-bottom: 20px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-        }
-        .video-card img {
-            width: 100%;
-            display: block;
-            transition: transform 0.3s;
-        }
-        .video-card img:hover {
-            transform: scale(1.05); 
-        }
-        .video-card h3 {
-            margin: 20px 0 5px 0;
-            font-size: 20px;
-        }
-        .video-card p {
-            margin: 0;
-            color: #aaaaaa;
-            font-size: 14px;
-        }
-
-        /* Comic section */
-        .comic-preview {
-            display: flex;
-            gap: 30px;
-            background-color: #1e1e1e;
-            padding: 30px;
-            border-radius: 10px;
-            align-items: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-        }
-        .comic-cover img {
-            width: 300px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: transform 0.3s;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-        }
-        .comic-cover img:hover {
-            transform: scale(1.03);
-        }
-        .comic-info {
-            flex: 1;
-        }
-        .comic-info h3 { 
-            margin-top: 0; 
-            font-size: 28px; 
-        }
-        .comic-info p { 
-            color: #aaaaaa; 
-            line-height: 1.6; 
-        }
-        .btn-read {
-            background-color: #00bcd4;
-            color: #121212;
-            border: none;
-            padding: 12px 24px;
-            font-size: 16px;
-            font-weight: bold;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 20px;
-            transition: background-color 0.3s;
-        }
-        .btn-read:hover { 
-            background-color: #008ba3; 
-        }
-
-        /* Lightbox */
-        .lightbox {
-            display: none;
-            position: fixed;
-            z-index: 2000;
-            left: 0; top: 0;
-            width: 100%; height: 100%;
-            background-color: rgba(0,0,0,0.95);
-            justify-content: center;
-            align-items: center;
-        }
-        .lightbox img {
-            max-width: 90%;
-            max-height: 95vh;
-            border-radius: 5px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.8);
-        }
-        .lightbox-controls {
-            position: absolute;
-            color: #fff;
-            font-size: 50px;
-            cursor: pointer;
-            user-select: none;
-            transition: color 0.3s;
-        }
-        .lightbox-controls:hover { color: #00bcd4; }
-        .lb-close { top: 20px; right: 40px; font-size: 40px; }
-        .lb-prev { left: 40px; }
-        .lb-next { right: 40px; }
-        
-        /* Responsive design */
-        @media (max-width: 768px) {
-            .comic-preview { flex-direction: column; text-align: center; }
-            .comic-cover img { width: 100%; max-width: 300px; }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -199,6 +14,7 @@
         <ul>
             <li><a href="#game">Game</a></li>
             <li><a href="#videos">Videos</a></li>
+            <li><a href="#exhibit">Exhibit</a></li>
             <li><a href="#comic">Comic</a></li>
         </ul>
     </nav>
@@ -212,45 +28,74 @@
     <div id="videos" class="section">
         <h2>🎬 Animation, Film & Interaction Design</h2>
         <div class="video-grid">
-            
             <div class="video-card">
-                <iframe width="100%" height="220" src="https://www.youtube.com/embed/63shdxQj6n0" title="Motion Design" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <iframe width="100%" height="220" src="https://www.youtube.com/embed/63shdxQj6n0" frameborder="0" allowfullscreen></iframe>
                 <h3>Motion Design</h3>
                 <p>Animated Short / Motion Graphics</p>
             </div>
-
             <div class="video-card">
-                <iframe width="100%" height="220" src="https://www.youtube.com/embed/fbkOTVymdUk" title="PULSE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <iframe width="100%" height="220" src="https://www.youtube.com/embed/fbkOTVymdUk" frameborder="0" allowfullscreen></iframe>
                 <h3>PULSE</h3>
                 <p>Short Film / Credits Animation</p>
             </div>
-
             <div class="video-card">
-                <iframe width="100%" height="220" src="https://www.youtube.com/embed/xfQ1zUqHuC0" title="NEXUS" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <iframe width="100%" height="220" src="https://www.youtube.com/embed/xfQ1zUqHuC0" frameborder="0" allowfullscreen></iframe>
                 <h3>NEXUS</h3>
                 <p>Short Film</p>
             </div>
-
             <div class="video-card">
-                <iframe width="100%" height="220" src="https://www.youtube.com/embed/7KUfS_qaQ1Q" title="Media Bias Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <iframe width="100%" height="220" src="https://www.youtube.com/embed/7KUfS_qaQ1Q" frameborder="0" allowfullscreen></iframe>
                 <h3>Media Bias Exhibit</h3>
                 <p>Deutsches Museum Trailer</p>
             </div>
+        </div>
+    </div>
 
+    <!-- NEW: Exhibit Section -->
+    <div id="exhibit" class="section">
+        <h2>Physical Computing & Exhibition Design</h2>
+        <div class="project-panel">
+            <div class="project-visual">
+                <div class="mini-gallery">
+                    <img id="exhibit-display" src="exhibit/exhibit_01.png" alt="Exhibit" onclick="openLightbox('exhibit', exhibitGalleryIndex)">
+                    <div class="gallery-nav">
+                        <button onclick="prevExhibit()">❮</button>
+                        <span id="exhibit-counter">1 / 4</span>
+                        <button onclick="nextExhibit()">❯</button>
+                    </div>
+                </div>
+                <a href="exhibit/doku.pdf" target="_blank" class="btn-read" style="width:100%; text-align:center; box-sizing: border-box;">Dokumentation (PDF)</a>
+            </div>
+            <div class="project-info">
+                <h3>Media Bias: The Weight of Your Trust</h3>
+                <p>Ein interaktives Museumsexponat, das das Vertrauen in KI thematisiert. Über eine physische Waage wird das kollektive Meinungsbild visualisiert.</p>
+                <p><small><b>Credits:</b> Konzept, Interaktionsdesign, Hardware & Programmierung, Trailer. Physischer Bau mit N. Menzl.</small></p>
+                
+                <div class="messe-section">
+                    <h4>Präsentation @ Deutsches Museum</h4>
+                    <p><small>Explorer Day & XR Hub Bavaria. Fachgespräche u.a. mit Staatsminister Dr. Florian Herrmann.</small></p>
+                    <div class="messe-grid">
+                        <img src="exhibit/01_messe.jpg" onclick="openLightbox('messe', 0)">
+                        <img src="exhibit/02_messe.jpg" onclick="openLightbox('messe', 1)">
+                        <img src="exhibit/03_messe.jpg" onclick="openLightbox('messe', 2)">
+                        <img src="exhibit/04_messe.jpg" onclick="openLightbox('messe', 3)">
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
     <!-- Comic section -->
     <div id="comic" class="section">
         <h2>📖 Comic Art & Storytelling</h2>
-        <div class="comic-preview">
-            <div class="comic-cover">
-                <img src="comic/01_cover.jpg" alt="Comic Cover" onclick="openLightbox(0)">
+        <div class="project-panel">
+            <div class="project-visual">
+                <img src="comic/01_cover.jpg" alt="Comic Cover" style="width:100%; border-radius:5px; cursor:pointer;" onclick="openLightbox('comic', 0)">
             </div>
-            <div class="comic-info">
+            <div class="project-info">
                 <h3>Mein Comic Titel</h3>
-                <p>Hier kannst du eine kurze, spannende Beschreibung deines Comics einfügen. Worum geht es in der Geschichte? Welche Technik oder welchen Stil hast du für die Illustrationen verwendet?</p>
-                <button class="btn-read" onclick="openLightbox(0)">Read Comic</button>
+                <p>Beschreibung deines Comics hier einfügen. Erzähle etwas über die Story und deinen visuellen Stil.</p>
+                <button class="btn-read" onclick="openLightbox('comic', 0)">Read Comic</button>
             </div>
         </div>
     </div>
@@ -263,51 +108,6 @@
         <span class="lightbox-controls lb-next" onclick="changeImage(1)">&#10095;</span>
     </div>
 
-    <!-- Scripts -->
-    <script>
-        const comicPages = [
-            "comic/01_cover.jpg",
-            "comic/02_spread.jpg",
-            "comic/03_spread.jpg",
-            "comic/04_spread.jpg",
-            "comic/05_spread.jpg",
-            "comic/06_spread.jpg",
-            "comic/07_spread.jpg",
-            "comic/08_spread.jpg"
-        ];
-        
-        let currentIndex = 0;
-        const lightbox = document.getElementById('lightbox');
-        const lightboxImg = document.getElementById('lightbox-img');
-
-        function openLightbox(index) {
-            currentIndex = index;
-            lightbox.style.display = 'flex';
-            updateLightboxImage();
-        }
-
-        function closeLightbox() {
-            lightbox.style.display = 'none';
-        }
-
-        function changeImage(step) {
-            currentIndex += step;
-            if(currentIndex < 0) currentIndex = comicPages.length - 1;
-            if(currentIndex >= comicPages.length) currentIndex = 0;
-            updateLightboxImage();
-        }
-
-        function updateLightboxImage() {
-            lightboxImg.src = comicPages[currentIndex];
-        }
-
-        document.addEventListener('keydown', function(e) {
-            if(lightbox.style.display === 'flex') {
-                if(e.key === 'ArrowLeft') changeImage(-1);
-                if(e.key === 'ArrowRight') changeImage(1);
-                if(e.key === 'Escape') closeLightbox();
-            }
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>

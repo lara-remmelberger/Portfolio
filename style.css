@@ -1,0 +1,199 @@
+/* Base Styling */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: #1e1e1e;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.5);
+}
+nav h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #00bcd4; 
+}
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 25px;
+}
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+nav a:hover {
+    color: #00bcd4;
+}
+
+/* Sections */
+.section, .game-container {
+    max-width: 1000px;
+    margin: 60px auto 80px auto;
+    padding: 0 20px;
+}
+.section h2 {
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    font-size: 28px;
+}
+
+/* Unity Game */
+iframe {
+    width: 100%;
+    height: 600px; 
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+    background-color: #000; 
+}
+
+/* Video Grid */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+.video-card {
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    padding-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* Panel/Box Design (Comic & Exhibit) */
+.project-panel {
+    display: flex;
+    gap: 30px;
+    background-color: #1e1e1e;
+    padding: 30px;
+    border-radius: 10px;
+    align-items: flex-start;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+.project-visual {
+    width: 350px;
+    flex-shrink: 0;
+}
+.project-info {
+    flex: 1;
+}
+
+/* Exhibit Mini-Galery Styles */
+.mini-gallery {
+    background: #000;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+#exhibit-display {
+    width: 100%;
+    display: block;
+    cursor: pointer;
+}
+.gallery-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background: #2a2a2a;
+    font-size: 14px;
+}
+.gallery-nav button {
+    background: #00bcd4;
+    border: none;
+    color: #121212;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Messe picture Grid */
+.messe-section {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+}
+.messe-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-top: 10px;
+}
+.messe-grid img {
+    width: 100%;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+.messe-grid img:hover { transform: scale(1.05); }
+
+/* Buttons */
+.btn-read {
+    background-color: #00bcd4;
+    color: #121212 !important;
+    text-decoration: none;
+    padding: 12px 24px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 15px;
+    transition: background-color 0.3s;
+    border: none;
+    cursor: pointer;
+}
+.btn-read:hover { background-color: #008ba3; }
+
+/* Lightbox */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.95);
+    justify-content: center;
+    align-items: center;
+}
+.lightbox img {
+    max-width: 90%;
+    max-height: 90vh;
+    border-radius: 5px;
+}
+.lightbox-controls {
+    position: absolute;
+    color: #fff;
+    font-size: 50px;
+    cursor: pointer;
+    user-select: none;
+}
+.lb-close { top: 20px; right: 40px; }
+.lb-prev { left: 40px; }
+.lb-next { right: 40px; }
+
+@media (max-width: 768px) {
+    .project-panel { flex-direction: column; align-items: center; }
+    .project-visual { width: 100%; max-width: 350px; }
+}
